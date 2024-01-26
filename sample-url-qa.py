@@ -1,9 +1,15 @@
 from selenium import webdriver
 import requests
+from selenium.webdriver.chrome.service import Service
 
 
 def check_url_status(url):
-    driver = webdriver.Chrome()
+    options = webdriver.ChromeOptions()
+    options.add_argument('--headless')
+    options.add_argument('--no-sandbox')
+    options.add_argument('--disable-dev-shm-usage')
+
+    driver = webdriver.Chrome(options=options)
     try:
         driver.get(url)
         current_url = driver.current_url
