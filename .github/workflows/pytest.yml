@@ -25,7 +25,7 @@ jobs:
 
     - name: Run pytest
       run: |
-        pytest
+        pytest sample-url-qa.py
 
     - name: Send GitHub Action trigger data to Slack workflow
       id: slack
